@@ -1,5 +1,5 @@
 {
-  "name": "generator",
+  "name": "node-ts-plop-gen",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
