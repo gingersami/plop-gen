@@ -1,0 +1,29 @@
+import {
+    interfaces, controller, httpPut, request, response,
+    next, injectHttpContext, httpGet, httpPost
+} from "inversify-express-utils";
+import * as express from "express";
+import {TYPES} from "../../../../ioc/types";
+import {ApiPath, ApiOperationGet, ApiOperationPost, ApiOperationPut} from "swagger-express-ts";
+import {Get{{pascalCase name}}Request} from "./requests/get-{{name}}-request";
+
+
+
+
+@ApiPath({
+    path: "/{{name}}",
+    name: "{{pascalCase name}}"
+})
+
+@controller("/{{name}}", TYPES.LoggerMiddleware)
+export class {{pascalCase name}}Controller implements interfaces.Controller {
+
+
+    @injectHttpContext private readonly _httpContext: interfaces.HttpContext;
+
+
+    @httpGet("/", TYPES.GuardMiddleware)
+    private get{{pascalCase name}}(@request() req: express.Request, @response() res: express.Response, @next() next: express.NextFunction) {
+        new Get{{pascalCase name}}Request(req, res, next).execute();
+    }
+}

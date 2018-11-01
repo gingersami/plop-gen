@@ -1,0 +1,11 @@
+import {BaseDaoImpl} from "./base-dao-impl";
+import {TYPES} from "../../ioc/types";
+import {provideSingleton} from "../../ioc/ioc";
+
+@provideSingleton(TYPES.{{pascalCase name}}Dao)
+export class {{pascalCase name}}DaoImpl extends BaseDaoImpl<> implements {{pascalCase name}}Dao {
+    constructor() {
+        super();
+    }
+
+}
