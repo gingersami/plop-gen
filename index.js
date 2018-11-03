@@ -30,6 +30,22 @@ module.exports = function(plop) {
             type: "add",
             path: "app/daos/{{name}}-dao-impl.ts",
             templateFile: "templates/dao-impl.hbs"
+      },
+      {
+        type:"append",
+        path:"app/daos/loader.ts",
+        templateFile:'templates/dao-loader.hbs'
+      },
+      {
+        type:"append",
+        path:"app/http/controllers/loader.ts",
+        templateFile:'templates/controller-loader.hbs'
+      },
+      {
+        type:"append",
+        path:"ioc/types.ts",
+        pattern:/,(?=\s*[\)\}\]])/g,
+        template:"    {{pascalCase name}}: Symbol.for('{{pascalCase name}}'),"
       }
     ]
   });
