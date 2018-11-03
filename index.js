@@ -23,17 +23,17 @@ module.exports = function(plop) {
       },
       {
         type: "add",
-        path: "/daos/{{name}}-dao.ts",
+        path: "daos/{{name}}-dao.ts",
         templateFile: "templates/dao.hbs"
       },
       {
             type: "add",
-            path: "/daos/{{name}}-dao-impl.ts",
+            path: "daos/{{name}}-dao-impl.ts",
             templateFile: "templates/dao-impl.hbs"
       },
       {
         type:"append",
-        path:"/daos/loader.ts",
+        path:"daos/loader.ts",
         templateFile:'templates/dao-loader.hbs'
       },
       {
